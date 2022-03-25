@@ -21,7 +21,7 @@ Pasos por seguir
 sudo apt-get update && sudo apt-get upgrade -y
 ```
 
-3- Instalar Java SE Runtime Environment (versión 11 o superior). Actualmente versión 11.0.14 2022-01-18.
+3- Instalar Java SE Runtime Environment (versión 11 o superior). Actualmente versión 11.0.14 2022-01-18. Gerrit aún no es compatible con Java 13 o posterior en este momento.
 
 ```
 sudo apt install default-jre -y
