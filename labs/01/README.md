@@ -82,7 +82,7 @@ git config --file $GERRIT_SITE/etc/gerrit.config httpd.listenUrl 'http://localho
 9- Opcional: Reinicie el servicio de Gerrit. Debe reiniciar el servicio Gerritr para que surtan efecto los cambios de URL:
 
 ```
-$GERRIT_SITE/bin/gerrit.sh reiniciar
+$GERRIT_SITE/bin/gerrit.sh restart
 ```
 
 10- Viendo a Gerrit: Para ver su nueva instalación básica de Gerrit, vaya a:
