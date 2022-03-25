@@ -45,7 +45,7 @@ export GERRIT_SITE=~/gerrit_testsite
 wget https://gerrit-releases.storage.googleapis.com/gerrit-$GERRIT_VERSION.war
 ```
 
-7 - Instalamos e inicializamos Gerrit
+7- Instalamos e inicializamos Gerrit
 ```
 java -jar gerrit-$GERRIT_VERSION.war init --batch --dev -d $GERRIT_SITE --install-plugin download-commands
 ```
@@ -58,6 +58,20 @@ Este comando toma tres parámetros:
 
 `--install-plugin` instala el complementos en este caso el  `download-commands`, que muestra de manera útil los comandos de descarga de git. No está activado de forma predeterminada en las versiones recientes de Gerrit.
 
+Mientras se ejecuta este comando, se muestran mensajes de estado en la ventana del terminal. Por ejemplo:
+
+```
+Generating SSH host key ... rsa(simple)... done
+Initialized /home/gerrit/gerrit_testsite
+Executing /home/gerrit/gerrit_testsite/bin/gerrit.sh start
+Starting Gerrit Code Review: OK
+```
+
+El último mensaje confirma que el servicio Gerrit se está ejecutando:
+
+```
+Starting Gerrit Code Review: OK
+```
 
 
 
