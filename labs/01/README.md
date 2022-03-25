@@ -73,5 +73,21 @@ El último mensaje confirma que el servicio Gerrit se está ejecutando:
 Starting Gerrit Code Review: OK
 ```
 
+8- Opcional: Actualizar la Listener URL. Para evitar que las conexiones externas se comuniquen con su nueva instancia de Gerrit, cambie la URL en la que escucha Gerrit de * a localhost. Por ejemplo:
 
+```
+git config --file $GERRIT_SITE/etc/gerrit.config httpd.listenUrl 'http://localhost:8080'
+```
+
+9- Opcional: Reinicie el servicio de Gerrit. Debe reiniciar el servicio Gerritr para que surtan efecto los cambios de URL:
+
+```
+$GERRIT_SITE/bin/gerrit.sh reiniciar
+```
+
+10- Viendo a Gerrit: Para ver su nueva instalación básica de Gerrit, vaya a:
+
+```
+http://localhost:8080
+```
 
