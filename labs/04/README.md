@@ -70,9 +70,9 @@ Starting Gerrit Code Review: OK
 
 6.3- `Para ambos casos`:
 
-      6.3.1- Confirmar la solicitud de compartir la informacíon personal. Tanto el correo electrónico como el nombre completo.
+   6.3.1- Confirmar la solicitud de compartir la informacíon personal. Tanto el correo electrónico como el nombre completo.
 
-      6.3.2- Por último hacer click sobre el botón de `Yes, log me in`.
+   6.3.2- Por último hacer click sobre el botón de `Yes, log me in`.
 
 Esto nos va a redirigir nuevamente a la pagina principal de Gerrit.
 
@@ -84,5 +84,7 @@ Esto nos va a redirigir nuevamente a la pagina principal de Gerrit.
 
 6.7- Click en `Save Changes`
 
+Ocultar las demás opciones de OpenID.
+=======
 
 
