@@ -70,9 +70,9 @@ Starting Gerrit Code Review: OK
 
 6.3- `Para ambos casos`:
 
-   6.3.1- Confirmar la solicitud de compartir la informacíon personal. Tanto el correo electrónico como el nombre completo.
+      6.3.1- Confirmar la solicitud de compartir la informacíon personal. Tanto el correo electrónico como el nombre completo.
 
-   6.3.2- Por último hacer click sobre el botón de `Yes, log me in`.
+      6.3.2- Por último hacer click sobre el botón de `Yes, log me in`.
 
 Esto nos va a redirigir nuevamente a la pagina principal de Gerrit.
 
@@ -84,7 +84,27 @@ Esto nos va a redirigir nuevamente a la pagina principal de Gerrit.
 
 6.7- Click en `Save Changes`
 
-Ocultar las demás opciones de OpenID.
+Ocultar las demás opciones de OpenID. Y realizar una redireccíon a OpenID
 =======
+
+Podríamos nuevamente utilizar el `*.war` y su parámetro `init`. Pero este no nos permite detallar en las opciónes de configuración de OpenID. Esta vez utilizaremos otro método.
+
+1- Detener el daemon de Gerrit
+
+```
+/opt/gerrit/bin/gerrit.sh stop
+```
+
+2- Cambiaremos el tipo de autenticación de OpenID a OpenID_SSO. Esto admite OpenID de un solo proveedor. No hay registro y el enlace "Iniciar sesión" envía al usuario directamente Entry-Point de SSO de la cuenta del proveedor de OpenID.
+
+```
+git config --file etc/gerrit.config auth.type OpenID_SSO
+```
+
+3- Debemos especificar cual será el ENtry-Point a utilizar, en este caso `https://login.launchpad.net/+openid`
+
+```
+git config --file etc/gerrit.config auth.openIdSsoUrl https://login.launchpad.net/+openid
+```
 
 
