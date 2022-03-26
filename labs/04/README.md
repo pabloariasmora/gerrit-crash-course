@@ -107,4 +107,24 @@ git config --file etc/gerrit.config auth.type OpenID_SSO
 git config --file etc/gerrit.config auth.openIdSsoUrl https://login.launchpad.net/+openid
 ```
 
+4- Iniciar nuevamente el daemon.
+
+```
+/opt/gerrit/bin/gerrit.sh start
+Starting Gerrit Code Review: OK
+```
+
+5- Podemos interntar volver a inicar sesión. Esta vez el botón de `Sign In`, nos reenviará directamente a `launchpad.net`.
+
+Otras formas de modificar las configuraciones.
+======
+
+1- Podemos modificar el archivo localizado en `/opt/gerrit/etc/gerrit.config` para configurar nuestro sistema.
+
+```
+vi /opt/gerrit/etc/gerrit.config
+```
+
+2- Toda modificación realizada debe estar acompañada de un reinicio, para que la misma tenga efecto.
+
 
