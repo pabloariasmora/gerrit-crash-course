@@ -40,38 +40,49 @@ Starting Gerrit Code Review: OK
 
 6.1- `Poseen usuario registrado`: 
 
-6.1.1-  Deben ingresar el usuario (ó correo electrónico).
+      6.1.1-  Deben ingresar el usuario (ó correo electrónico).
 
-6.1.2- Seleccionar la opcíon `I have an Ubuntu One account and my password is:` 
+      6.1.2- Seleccionar la opcíon `I have an Ubuntu One account and my password is:` 
 
-6.2.3- Ingresar la contraseña.
+      6.1.3- Ingresar la contraseña.
 
-6.2.4- Por último hacer click sobre el botón de `Log In`.
+      6.1.4- Por último hacer click sobre el botón de `Log In`.
 
 6.2- `No poseen usuario registrado`: 
 
-6.2.1- Deben ingresar correo electrónico del nuevo usuario.
+      6.2.1- Deben ingresar correo electrónico del nuevo usuario.
 
-6.2.2- Seleccionar la opcíon `I don’t have an Ubuntu One account:`
+      6.2.2- Seleccionar la opcíon `I don’t have an Ubuntu One account:`
 
-6.2.3- Ingresar nombre completo `Full Name`
+      6.2.3- Ingresar nombre completo `Full Name`
 
-6.2.4- El usuario `Username`
+      6.2.4- El usuario `Username`
 
-6.2.5- Ingresar la contraseña.
+      6.2.5- Ingresar la contraseña.
 
-6.2.6- Confirmar la contraseña.
+      6.2.6- Confirmar la contraseña.
 
-6.2.7- Aceptar los términos y condiciones.
+      6.2.7- Aceptar los términos y condiciones.
 
-6.2.8- Por último hacer click sobre el botón de `Create account`.
+      6.2.8- Por último hacer click sobre el botón de `Create account`.
 
-6.2.9- Verificar el correo electrónico.
+      6.2.9- Verificar el correo electrónico.
 
 6.3- `Para ambos casos`:
 
-6.3.1- Confirmar la solicitud de compartir la informacíon personal. Tanto el correo electrónico como el nombre completo.
+      6.3.1- Confirmar la solicitud de compartir la informacíon personal. Tanto el correo electrónico como el nombre completo.
 
-6.3.2- Por último hacer click sobre el botón de `Yes, log me in`.
+      6.3.2- Por último hacer click sobre el botón de `Yes, log me in`.
 
 Esto nos va a redirigir nuevamente a la pagina principal de Gerrit.
+
+6.4- Entramos a las opciones de configuración, dar click sobre su nombre a la izquierda y luego dar click a `Settings`.
+
+6.5- Podemos observar que en este punto no es posible cambiar el correo electrónico del usuario.
+
+6.6- Debido a la configuración por defecto de LaunchPad, el nombre de usuario no se ha compartido, por ende debemos actualizarlo en el cambio de `Username` de manera manual.
+
+6.7- Click en `Save Changes`
+
+
+
