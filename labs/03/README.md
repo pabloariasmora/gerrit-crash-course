@@ -1,4 +1,4 @@
-Guia para instalar Gerrit en Linux (Canonical, Ubuntu, 20.04 LTS, Focal Fossa) 
+Guia para instalar Gerrit Sandbox en Linux (Canonical, Ubuntu, 20.04 LTS, Focal Fossa) 
 =
 
 Introducción
