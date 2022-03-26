@@ -69,3 +69,38 @@ export GERRIT_VERSION=3.1.3
 java -jar gerrit-$GERRIT_VERSION.war init
 ```
 
+# TODO - Agregar salidas
+
+Start/Stop Daemon, Inicio en reinicio
+====
+
+1- Para controlar el daemon Gerrit Code Review que se ejecuta en segundo plano, use el script de inicio de estilo rc.d creado por 'init':
+
+```
+   /opt/gerrit/bin/gerrit.sh start
+   /opt/gerrit/bin/gerrit.sh stop
+   /opt/gerrit/bin/gerrit.sh restart
+```
+
+2- Configure el daemon para que se inicie y detenga automáticamente con el sistema operativo. 
+
+```
+vi /opt/gerrit//bin/gerrit.sh
+```
+
+3- Descomente las siguientes 3 líneas en el script `/opt/gerrit//bin/gerrit.sh`:
+
+```
+chkconfig: 3 99 99
+description: Gerrit Code Review
+processname: gerrit
+```
+
+4- Usando root, vincule el script gerrit.sh a rc3.d:
+
+```
+  sudo ln -snf /opt/gerrit/bin/gerrit.sh /etc/init.d/gerrit
+  sudo ln -snf /etc/init.d/gerrit /etc/rc3.d/S90gerrit
+```
+
+('Opcional') Configure el daemon para que se inicie y detenga automáticamente con el sistema operativo.
