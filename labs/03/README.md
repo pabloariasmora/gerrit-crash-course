@@ -74,7 +74,7 @@ java -jar gerrit-$GERRIT_VERSION.war init
 Start/Stop Daemon, Inicio en reinicio
 ====
 
-1- Para controlar el daemon Gerrit Code Review que se ejecuta en segundo plano, use el script de inicio de estilo rc.d creado por 'init':
+1- Para controlar el daemon Gerrit Code Review que se ejecuta en segundo plano, utilizaremos el archivo presente en `/opt/gerrit/bin/gerrit.sh`:
 
 ```
    /opt/gerrit/bin/gerrit.sh start
@@ -82,25 +82,64 @@ Start/Stop Daemon, Inicio en reinicio
    /opt/gerrit/bin/gerrit.sh restart
 ```
 
-2- Configure el daemon para que se inicie y detenga automáticamente con el sistema operativo. 
+4- Usando root, creamos el archivo de servicios (si actualmente esta dentro del usuario gerrit, ejecute un `exit`).
 
 ```
-vi /opt/gerrit//bin/gerrit.sh
+  vi /etc/systemd/system/gerrit.service
 ```
 
-3- Descomente las siguientes 3 líneas en el script `/opt/gerrit//bin/gerrit.sh`:
+5- Copiamos dentro del archivo gerrit.service la siguiente información:
 
 ```
-chkconfig: 3 99 99
-description: Gerrit Code Review
-processname: gerrit
+[Unit]
+Description=Web based code review and project management for Git based projects
+After=network.target
+
+
+[Service]
+Type=forking
+User=gerrit
+EnvironmentFile=/etc/default/gerritcodereview
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=gerrit
+ExecStart=/opt/gerrit/bin/gerrit.sh start
+ExecStop=/opt/gerrit/bin/gerrit.sh stop
+PIDFile=/opt/gerrit/logs/gerrit.pid
+
+[Install]
+WantedBy=multi-user.target
 ```
 
-4- Usando root, vincule el script gerrit.sh a rc3.d:
+6- Recargamos las definiciones dentro de systemctl
+
 
 ```
-  sudo ln -snf /opt/gerrit/bin/gerrit.sh /etc/init.d/gerrit
-  sudo ln -snf /etc/init.d/gerrit /etc/rc3.d/S90gerrit
+systemctl daemon-reload
 ```
 
-('Opcional') Configure el daemon para que se inicie y detenga automáticamente con el sistema operativo.
+7- Habilitamos que corrar luego de reiniciar
+
+```
+systemctl enable gerrit
+```
+
+8- Iniciamos el servicio
+
+```
+service gerrit start
+```
+
+9- Verificamos que el estado del servicio sea `Active`
+
+```
+service gerrit status
+```
+
+10- A modo de prueba reiniciamos el servicio
+
+```
+service gerrit restart
+```
+
+11- ('Opcional') Reiniciamos el servidor, y verificamos el estado del nuevo servicio
