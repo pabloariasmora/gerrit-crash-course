@@ -1,21 +1,19 @@
-Guia para instalar Gerrit Sandbox en Linux (Canonical, Ubuntu, 20.04 LTS, Focal Fossa) 
+# Guia para instalar Gerrit Sandbox en Linux (Canonical, Ubuntu, 20.04 LTS, Focal Fossa) 
 =
 
-Introducción
-======
+### Introducción
+
 Montaremos una instalación reducida de Gerrit sandbox con las siguientes características:
 - Algoritmos de seguridad predeterminados (abordaremos seguridad más adelante)
 - HTTP estándar sin SSL
 - Registro de usuarios locales sin validación de contraseña (solo para sandboxes)
 
-Requerimientos
-======
+### Requerimientos
 
 * Un servidor con el sistema operativo Ubuntu, 20.04 LTS, Focal Fossa previamente instalado.
 * Asegurar conectividad de los puertos 22, 80, 8080 y 29418.
 
-Descarga 
-======
+### Descarga 
 
 1- Iniciar sesión dentro del servidor. Para esto abra una ventana de terminal.
 
@@ -50,8 +48,8 @@ mkdir -p /opt/gerrit
 cd /opt/gerrit
 wget https://gerrit-releases.storage.googleapis.com/gerrit-$GERRIT_VERSION.war
 ```
-Ejecutando la configuración inicial de Gerrit
-=====
+### Ejecutando la configuración inicial de Gerrit
+
 
 1- Antes de comenzar la configuración de Gerrit, debemos crear un usuario dedicado para él (por ejemplo, Gerrit), para permitir que el servicio funcione en su propia cuenta y no en la cuenta del administrador del sistema (root). Para mayor comodidad, asignamos /opt/gerrit como directorio de inicio:
 
@@ -71,8 +69,7 @@ java -jar gerrit-$GERRIT_VERSION.war init
 
 # TODO - Agregar salidas
 
-Start/Stop Daemon, Inicio en reinicio
-====
+### Start/Stop Daemon, Inicio en reinicio
 
 1- Para controlar el daemon Gerrit Code Review que se ejecuta en segundo plano, utilizaremos el archivo presente en `/opt/gerrit/bin/gerrit.sh`:
 
