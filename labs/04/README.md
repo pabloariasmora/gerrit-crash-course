@@ -92,7 +92,7 @@ Podríamos nuevamente utilizar el `*.war` y su parámetro `init`. Pero este no n
 1- Detener el daemon de Gerrit
 
 ```
-/opt/gerrit/bin/gerrit.sh stop
+service gerrit stop
 ```
 
 2- Cambiaremos el tipo de autenticación de OpenID a OpenID_SSO. Esto admite OpenID de un solo proveedor. No hay registro y el enlace "Iniciar sesión" envía al usuario directamente Entry-Point de SSO de la cuenta del proveedor de OpenID.
@@ -110,7 +110,7 @@ git config --file etc/gerrit.config auth.openIdSsoUrl https://login.launchpad.ne
 4- Iniciar nuevamente el daemon.
 
 ```
-/opt/gerrit/bin/gerrit.sh start
+service gerrit start
 Starting Gerrit Code Review: OK
 ```
 
