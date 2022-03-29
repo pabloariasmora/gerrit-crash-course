@@ -166,13 +166,13 @@ Reindexed 2 documents in projects index in 0.6s (3.4/s)
    /opt/gerrit/bin/gerrit.sh restart
 ```
 
-4- Usando root, creamos el archivo de servicios (si actualmente esta dentro del usuario gerrit, ejecute un `exit`).
+2- Usando root, creamos el archivo de servicios (si actualmente esta dentro del usuario gerrit, ejecute un `exit`).
 
 ```
   vi /etc/systemd/system/gerrit.service
 ```
 
-5- Copiamos dentro del archivo gerrit.service la siguiente información:
+3- Copiamos dentro del archivo gerrit.service la siguiente información:
 
 ```
 [Unit]
@@ -193,6 +193,12 @@ PIDFile=/opt/gerrit/logs/gerrit.pid
 
 [Install]
 WantedBy=multi-user.target
+```
+
+4- Creamos el archivo de Ambiente
+
+```
+touch /etc/default/gerritcodereview
 ```
 
 6- Recargamos las definiciones dentro de systemctl
