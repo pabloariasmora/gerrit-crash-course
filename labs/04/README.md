@@ -1,17 +1,18 @@
 Autenticación a través de Internet a través de OpenID
 ====
 
-1- Detener el daemon de Gerrit
+1- Detener el servicio de Gerrit como root
 
 ```
-/opt/gerrit/bin/gerrit.sh stop
+service gerrit stop
 ```
 
-2- Ejecutar nuevamente la configuración inicial de Gerrit 
+2- Ejecutar nuevamente la configuración inicial de Gerrit, utilizando el usuario gerrit
 
 ```
 cd /opt/gerrit
-java -jar gerrit.war init
+export GERRIT_VERSION=3.1.3
+java -jar gerrit-$GERRIT_VERSION.war init
 ```
 
 Mantener los valores por defecto excepto el Authentication method.
@@ -25,11 +26,10 @@ Authentication method [DEVELOPMENT_BECOME_ANY_ACCOUNT/?]: openid RETURN
 Initialized /opt/gerrit
 ```
 
-3- Iniciar nuevamente el daemon.
+3- Iniciar nuevamente el servicio.
 
 ```
-/opt/gerrit/bin/gerrit.sh start
-Starting Gerrit Code Review: OK
+service gerrit start
 ```
 
 4- Abrir en el navegador el URL de Gerrit, usado en los laboratorios anteriores.
