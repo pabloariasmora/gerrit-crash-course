@@ -36,4 +36,15 @@ service gerrit start
 
 5- Buscamos la opcion de `Browse`, Groups
 
+6- Damos click sobre el `Group Name` -> `Administrators`
+
+7- Por facilidad vamos a mostrar el grupo visible a todas las personas registradas `Make group visible to all registered users` ->`True`
+
+8- Guardamos `SAVE GROUP OPTIONS`
+
+9- Luego en las opciones de la izquierda damos click sobre `Members`
+
+10- Agregamos nuestro usuario como administrador usando el correo electronico asociado, luego click en `Add`
+
+
 
