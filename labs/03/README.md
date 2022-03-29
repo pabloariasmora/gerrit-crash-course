@@ -67,7 +67,94 @@ export GERRIT_VERSION=3.1.3
 java -jar gerrit-$GERRIT_VERSION.war init
 ```
 
-# TODO - Agregar salidas
+### Salidas en pantalla
+
+Se observan los siguientes valores por default.
+
+```
+*** Gerrit Code Review 3.1.3
+*** 
+
+
+*** Git Repositories
+*** 
+
+Location of Git repositories   [git]: 
+
+*** Index
+*** 
+
+Type                           [lucene]: 
+
+The index must be rebuilt before starting Gerrit:
+  java -jar gerrit.war reindex -d site_path
+
+*** User Authentication
+*** 
+
+Authentication method          [openid/?]: 
+Enable signed push support     [y/N]? 
+
+*** Review Labels
+*** 
+
+Install Verified label         [y/N]? 
+
+*** Email Delivery
+*** 
+
+SMTP server hostname           [localhost]: 
+SMTP server port               [(default)]: 
+SMTP encryption                [none/?]: 
+SMTP username                  : 
+
+*** Container Process
+*** 
+
+Run as                         [gerrit]: 
+Java runtime                   [/usr/lib/jvm/java-11-openjdk-amd64]: 
+Upgrade ./bin/gerrit.war       [Y/n]? 
+Copying gerrit-3.1.3.war to ./bin/gerrit.war
+
+
+*** SSH Daemon
+*** 
+
+Listen on address              [*]: 
+Listen on port                 [29418]: 
+*** HTTP Daemon
+*** 
+
+Behind reverse proxy           [y/N]? 
+Use SSL (https://)             [y/N]? 
+Listen on address              [*]: 
+Listen on port                 [8080]:
+Canonical URL                  [http://172.31.18.186:8080/]: 
+
+*** Plugins
+*** 
+
+Installing plugins.
+Install plugin codemirror-editor version v3.1.3 [y/N]? 
+Install plugin commit-message-length-validator version v3.1.3 [y/N]? 
+Install plugin delete-project version v3.1.3 [y/N]? 
+Install plugin download-commands version v3.1.3 [Y/n]? Y
+Updated download-commands to v3.1.3
+Install plugin gitiles version v3.1.3 [y/N]? 
+Install plugin hooks version v3.1.3 [y/N]? 
+Install plugin plugin-manager version v3.1.3 [y/N]? 
+Install plugin replication version v3.1.3 [y/N]? 
+Install plugin reviewnotes version v3.1.3 [y/N]? 
+Install plugin singleusergroup version v3.1.3 [y/N]? 
+Install plugin webhooks version v3.1.3 [y/N]? 
+Initializing plugins.
+No plugins found with init steps.
+
+Initialized /opt/gerrit
+Reindexing projects:    100% (2/2) with: reindex --site-path . --threads 1 --index projects
+Reindexed 2 documents in projects index in 0.6s (3.4/s)
+
+```
 
 ### Start/Stop Daemon, Inicio en reinicio
 
