@@ -17,3 +17,29 @@ Extensibilidad: los desarrolladores de complementos pueden agregar nuevos campos
 Nuevas funciones: permite la federación simple entre servidores Gerrit, así como la revisión de código fuera de línea y la interoperabilidad con otras herramientas.
 Instalación con Base de Datos Postgres
 
+# Cambio en las instrucciones de instalación:
+
+https://gerrit.googlesource.com/gerrit/+/v2.0.23/Documentation/install.txt <- Buscar H2
+
+https://gerrit.googlesource.com/gerrit/+/refs/tags/v3.5.1/Documentation/install.txt
+
+
+Post para migracion
+
+https://groups.google.com/g/repo-discuss/c/pfUaOUrT1jw
+
+Postgres Lib se descarga y se pone en /lib
+https://jdbc.postgresql.org/download.html
+
+
+Propiedad
+
+https://gerrit-review.googlesource.com/Documentation/config-gerrit.html#accountPatchReviewDb
+
+Proceso
+
+https://gerrit-review.googlesource.com/Documentation/pgm-MigrateAccountPatchReviewDb.html
+
+
+Asi se configura Postgres
+https://techviewleo.com/how-to-install-postgresql-database-on-ubuntu/
