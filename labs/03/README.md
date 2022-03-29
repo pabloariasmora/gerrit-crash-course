@@ -150,6 +150,16 @@ Install plugin webhooks version v3.1.3 [y/N]?
 Initializing plugins.
 No plugins found with init steps.
 
+*** Gerrit Administrator
+*** 
+
+Create administrator user      [Y/n]? 
+username                       [admin]: 
+name                           [Administrator]: 
+HTTP password                  [secret]: 
+public SSH key file            []: 
+email                          [admin@example.com]:
+
 Initialized /opt/gerrit
 Reindexing projects:    100% (2/2) with: reindex --site-path . --threads 1 --index projects
 Reindexed 2 documents in projects index in 0.6s (3.4/s)
