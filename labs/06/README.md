@@ -8,3 +8,5 @@
 
 4- Damos click sobre `ADD NEW SSH KEY`
 
+5- Esto asociara el usuario Ubuntu con nuestro usuario de launchpad.
+
