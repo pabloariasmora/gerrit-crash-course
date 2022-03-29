@@ -48,3 +48,12 @@ The key's randomart image is:
 |         ..      |
 +----[SHA256]-----+
 ```
+
+
+4- Obtenemos la llave publica
+
+```
+cat ~/.ssh/id_rsa.pub
+```
+
+5- Copiamos la llave en un archivo de texto en nuestro computador.
