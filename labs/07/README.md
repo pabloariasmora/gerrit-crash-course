@@ -62,7 +62,7 @@ service gerrit stop
 su - gerrit
 ```
 
-2- Ejecutar nuevamente la configuración inicial de Gerrit, utilizando el usuario gerrit
+15- Ejecutar nuevamente la configuración inicial de Gerrit, utilizando el usuario gerrit
 
 ```
 cd /opt/gerrit
@@ -81,7 +81,7 @@ Authentication method [OPENSSO/?]: open_sso  RETURN
 Initialized /opt/gerrit
 ```
 
-3- Iniciamos el servicio de Gerrit como root
+16- Iniciamos el servicio de Gerrit como root
 
 ```
 service gerrit start
