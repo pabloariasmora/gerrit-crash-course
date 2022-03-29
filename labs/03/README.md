@@ -92,7 +92,7 @@ The index must be rebuilt before starting Gerrit:
 *** User Authentication
 *** 
 
-Authentication method          [openid/?]: 
+Authentication method          [openid/?]:development_become_any_account 
 Enable signed push support     [y/N]? 
 
 *** Review Labels
