@@ -1,4 +1,4 @@
-# Dar permisos de Administrador a usuarios de Launchpad (Open_SSO)
+# Dar permisos de Administrador a un usuario de Launchpad (Open_SSO)
 
 
 1- Detener el servicio de Gerrit como root
@@ -46,5 +46,44 @@ service gerrit start
 
 10- Agregamos nuestro usuario como administrador usando el correo electronico asociado, luego click en `Add`
 
+11- Revisamos la operación en el `Audit Log`, opción a la izquierda. Para ver esta nueva asignación de roles.
 
+12- Damos `Sign Out`
+
+13- Detener el servicio de Gerrit como root
+
+```
+service gerrit stop
+```
+
+14 - Pasamos a convertirnos en el usuario Gerrit
+
+```
+su - gerrit
+```
+
+2- Ejecutar nuevamente la configuración inicial de Gerrit, utilizando el usuario gerrit
+
+```
+cd /opt/gerrit
+export GERRIT_VERSION=3.1.3
+java -jar gerrit-$GERRIT_VERSION.war init
+```
+
+Mantener los valores por defecto excepto el Authentication method.
+
+```
+[...]
+*** User Authentication
+***
+Authentication method [OPENSSO/?]: open_sso  RETURN
+[...]
+Initialized /opt/gerrit
+```
+
+3- Iniciamos el servicio de Gerrit como root
+
+```
+service gerrit start
+```
 
