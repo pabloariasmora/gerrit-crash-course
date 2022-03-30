@@ -33,4 +33,24 @@ git config user.name "Pablo Arias Mora"
 git config user.email "pabloariasmora@hotmail.com"
 ```
 
-2- Instale el `hook` `commit-msg` de Gerrit en el repositorio de Git clonado localmente. Se utiliza para generar el campo `Change-Id`, una identificación global única para cada nuevo cambio creado con un `git commit`
+2- Instale el `hook` `commit-msg` de Gerrit en el repositorio de Git clonado localmente. Se utiliza para generar el campo `Change-Id`, una identificación global única para cada nuevo cambio creado con un `git commit`, reemplazar la `IP` en el comando por la IP Pública de su servidor Ej:`54.175.5.53`
+
+```
+mkdir -p .git/hooks
+curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://54.175.5.53:8080/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
+```
+
+# Cambio a un branch de desarrollo
+
+1- Verificamos nos encontremos en el `Branch`-> `master`
+
+```
+git branch
+* master
+```
+2- Creamos una nueva `Branch Local`-> `development`
+
+```
+git checkout -b development
+Switched to a new branch `development`
+```
