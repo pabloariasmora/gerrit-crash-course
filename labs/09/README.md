@@ -166,5 +166,5 @@ git log
 10- Podemos realizar un `Push` para `Code Review` utilizando las referencias.
 
 ```
-git push origin HEAD:ref/for/dev
+git push origin HEAD:refs/for/dev
 ```
