@@ -87,3 +87,4 @@ Initialized /opt/gerrit
 service gerrit start
 ```
 
+17- Hacemos `Sign In` con nuestro usuario de `Lauchpad` y revisamos los accesos de `Administrator`
