@@ -48,9 +48,79 @@ curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://54.175.5.53:8080/tool
 git branch
 * master
 ```
+
 2- Creamos una nueva `Branch Local`-> `development`
 
 ```
 git checkout -b development
 Switched to a new branch `development`
 ```
+
+3- Ahora vamos a generar un cambio en el repositorio, esto creando un nuevo archivo llamado `new-file.txt`
+
+```
+ubuntu@ip-172-31-16-198:~/hello-world$ touch new-file.txt
+ubuntu@ip-172-31-16-198:~/hello-world$ vi new-file.txt 
+```
+
+4- Dentro del archivo escribimos la frase
+
+```
+Gerrit New File
+```
+
+5- Sumamos el nuevo archivo a la lista de cambios.
+
+```
+git add new-file.txt
+```
+
+6- Confirmamos los cambios
+
+```
+git commit
+```
+
+7- Escribimos en el archivo de confirmación.
+
+```
+Added a new file called: new-file.txt
+```
+
+8- Confirmamos que el `Change-Id` se relacionara con el  `commit`
+
+```
+git log
+```
+
+9- En el mensaje de salida buscamos por la palabra `Change-Id`.
+
+10- Sincronizamos el `Branch Local` con el repositorio remoto
+
+```
+git push origin HEAD:dev
+
+[...]
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Writing objects: 100% (3/3), 318 bytes | 318.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: Processing changes: refs: 1, done    
+To http://54.175.5.53:8080/hello-world
+ * [new branch]      HEAD -> dev
+```
+
+11- El comando debería hacer solicitud de la contraseña si se utilizó el git clone por http. Si se utilizó por medio de ssh utilizará las llaves de SSH.
+
+12- Una vez completado, el nuevo `Branch` se puede visualizar en nuestra interfaz de Gerrit. 
+`Browse`->`Repository`->`hello-world`->`Branches`->`dev`
+
+13- *Importante*: El nombre del `Branch local`(`development`) puede ser totalmente diferente al remoto (`dev`).
+
+14- Podemos visualizar el cambio si damos click en `Browse`
+
+15- Podemos visualizar el contenido del archivo, si damos click sobre su nombre `new-file.txt`
+
+
+
+
