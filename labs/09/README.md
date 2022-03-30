@@ -121,6 +121,50 @@ To http://54.175.5.53:8080/hello-world
 
 15- Podemos visualizar el contenido del archivo, si damos click sobre su nombre `new-file.txt`
 
+16- Podemos observar como hemos realizado un `Bypass` a la revisión de código.
 
+# Realizar un cambio a un branch de desarrollo con revisión de código.
 
+1- Realizamos un cambio all archivo `new-file.txt`
 
+```
+ubuntu@ip-172-31-16-198:~/hello-world$ vi new-file.txt 
+```
+
+4- Dentro del archivo adjuntamos la frase
+
+```
+Gerrit New File For Code Review
+```
+
+5- Guardamos el archivo.
+
+6- Sumamos el nuevo archivo a la lista de cambios.
+
+```
+git add new-file.txt
+```
+
+7- Confirmamos los cambios
+
+```
+git commit
+```
+
+8- Escribimos en el archivo de confirmación.
+
+```
+Minor Change to new-file.txt
+```
+
+9- Confirmamos que el `Change-Id` se relacionara con el  `commit`
+
+```
+git log
+```
+
+10- Podemos realizar un `Push` para `Code Review` utilizando las referencias.
+
+```
+git push origin HEAD:ref/for/dev
+```
