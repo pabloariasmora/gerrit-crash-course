@@ -166,5 +166,47 @@ git log
 10- Podemos realizar un `Push` para `Code Review` utilizando las referencias.
 
 ```
+git push origin HEAD:refs/for/development
+```
+
+11- El commando anterior debio mostrar una salida de error. Ya que no existe un `Remote Branch` llamado `development`
+
+```
+ubuntu@ip-172-31-16-198:~/hello-world$ git push origin HEAD:refs/for/development: 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 322 bytes | 322.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: Processing changes: refs: 1, done    
+To http://3.89.66.201:8080/hello-world
+ ! [remote rejected] HEAD -> refs/for/development (branch development not found)
+error: failed to push some refs to 'http://3.89.66.201:8080/hello-world'
+```
+
+12- Nuevamente realizar un `Push` para `Code Review` utilizando las referencias, pero con el nombre correcto del `Remote Branch` -> `dev`
+
+```
 git push origin HEAD:refs/for/dev
 ```
+
+13- De la salida de success, copiamos el URL del cambio. (ej: `http://34.229.91.40:8080/c/hello-world/+/2`)
+
+```
+ubuntu@ip-172-31-16-198:~/hello-world$ git push origin HEAD:refs/for/dev
+[...]
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 322 bytes | 322.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: Processing changes: refs: 1, new: 1, done    
+remote: 
+remote: SUCCESS
+remote: 
+remote:   http://34.229.91.40:8080/c/hello-world/+/2 Change on filewqx [NEW]
+remote: 
+To http://3.89.66.201:8080/hello-world
+ * [new branch]      HEAD -> refs/for/dev
+ 
+ ```
+ 
+ 14- Visitamos el enlace, para visualizar nuestro cambio.
