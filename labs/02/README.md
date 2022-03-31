@@ -1,5 +1,8 @@
 Guia para generar las SSH-Keys
+=
+
 Introducción
+==
 Este contenido explica cómo generar las llaves necesarias (SSH-Keys) para utilizar en Gerrit.
 
 Requerimientos
