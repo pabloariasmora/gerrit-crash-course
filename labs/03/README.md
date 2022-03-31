@@ -67,6 +67,14 @@ export GERRIT_VERSION=3.1.3
 java -jar gerrit-$GERRIT_VERSION.war init
 ```
 
+Estas características son beneficiosas cuando desea ponerse en marcha rápidamente con Gerrit y limita tener que dedicar demasiado tiempo a configurar configuraciones complejas de seguridad y autenticación de usuarios.
+Debido a su naturaleza, estos pueden tomar potencialmente mucho tiempo y merecen un capítulo dedicado para cubrirlos adecuadamente.
+
+El asistente de inicio de Gerrit pasa por todas las configuraciones comunes, solicitando el valor para cada una de ellas. El texto que se muestra entre corchetes [] indica el valor predeterminado sugerido o el valor ya presente en su configuración actual. Para aceptar el valor mostrado, simplemente presione RETURN. Para proporcionar un valor diferente, simplemente ingrese los nuevos valores y presione RETURN.
+
+Siempre que haya opciones múltiples disponibles, ingresando un ? (signo de interrogación) y presionando RETURN es posible desplegar la lista completa de opciones.
+
+
 ### Salidas en pantalla
 
 Se observan los siguientes valores por default.
