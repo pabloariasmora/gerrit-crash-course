@@ -1,5 +1,5 @@
 # Guia para instalar Gerrit Sandbox en Linux (Canonical, Ubuntu, 20.04 LTS, Focal Fossa) 
-=
+
 
 ### Introducción
 
