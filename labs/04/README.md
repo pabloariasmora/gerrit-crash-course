@@ -14,5 +14,21 @@ http://localhost:8080
 
 5- Seleccionamos a la derecha el nombre de `Administrator`.
 
-6- Damos click sobre `Sign Out`
+6- Damos click sobre `Sign Out`.
+
+# Crear un nuevo usuario.
+
+1- Damos click sobre `Sign In`
+
+2- Click sobre `New Account`.
+
+3- Ingresamos como `FULL NAME`: `John Doe`
+
+4- Ingresamos como `FULL NAME`: `John Doe`
+
+5- Registramos como `email`: `john@doe.com`
+
+6- Damos click sobre `Sign Out`.
+
+
 
