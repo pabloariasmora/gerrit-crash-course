@@ -251,3 +251,9 @@ service gerrit restart
 ```
 
 11- ('Opcional') Reiniciamos el servidor, y verificamos el estado del nuevo servicio
+
+12- Viendo a Gerrit: Para ver su nueva instalación básica de Gerrit, vaya a:
+
+```
+http://localhost:8080
+```
