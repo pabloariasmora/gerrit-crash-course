@@ -1,5 +1,9 @@
 # Descargar un repositorio por HTTP
 
+Al usuario administrador de Gerrit se le otorga automáticamente el permiso para crear nuevos proyectos de Gerrit.
+
+### Pasos
+
 1- Utilizando la interfaz web y nuestro usuario Administrador OpenSSO.
 
 2- Damos click sobre `Browse`-> `Repositories`
