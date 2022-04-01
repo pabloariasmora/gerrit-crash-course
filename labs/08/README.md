@@ -104,9 +104,93 @@ remote: Total 2 (delta 0), reused 0 (delta 0)
 Unpacking objects: 100% (2/2), 195 bytes | 48.00 KiB/s, done.
 ```
 
-14- Borramos la carpeta
+7- Listamos los archivos dentro de nuestro directorio actual
+
+```
+ls -la
+```
+
+8- Confirmamos tener una carpeta con el nombre de `first-repo`.
+
+9- Abrimos la carpeta 
+
+```
+cd first-repo
+```
+
+10- Listamos los archivos dentro de esta nueva carpeta, incluyendo ocultos.
+
+```
+ls -la
+```
+
+11- Confirmamos la existencia de la carpeta oculta `.git`.
+
+12- Borramos la carpeta
 
 ```
 cd ..
 rm -rf first-repo
 ```
+
+# Descargar un repositorio por medio de SSH
+
+1- Debemos previamente cumplir con los laboratorios 02 y 06.
+
+2- Volver a la página principal del repositorio `first-project`.
+
+3- Sobre la opción `SSH`. Copiamos el comando que esta bajo la opcíon `Clone`. De no estar presente y cumplir con el primer paso, solamente `SignOut - SignIn`
+
+Similar a
+
+```
+git clone "ssh://pabloariasmora@54.90.80.219:29418/first-repo"
+```
+
+4- Utilizando el usuario ubuntu, u otra máquina virtual con conexión a nuestra instancia de Gerrit. Ejecutamos el comando que copiamos anteriormente. Esta vez no solicitara la instancia porque hace uso de las SSH Keys configuradas previamente, pero si nos solicitará confirmar la identidad de nuestro servidor de gerrit (yes).
+
+Similar a
+
+```
+git clone "ssh://pabloariasmora@54.90.80.219:29418/first-repo"
+Cloning into 'first-repo'...
+The authenticity of host '[54.90.80.219]:29418 ([54.90.80.219]:29418)' can't be established.
+ED25519 key fingerprint is SHA256:JhUUuIdk+8TSfdsECV6GrpybPd87S8ulf8SvBvjCwFEHzI.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[54.90.80.219]:29418' (ED25519) to the list of known hosts.
+remote: Counting objects: 2, done
+remote: Finding sources: 100% (2/2)
+remote: Total 2 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (2/2), done.
+```
+5- Listamos los archivos dentro de nuestro directorio actual
+
+```
+ls -la
+```
+
+6- Confirmamos tener una carpeta con el nombre de `first-repo`.
+
+7- Abrimos la carpeta 
+
+```
+cd first-repo
+```
+
+8- Listamos los archivos dentro de esta nueva carpeta, incluyendo ocultos.
+
+```
+ls -la
+```
+
+9- Confirmamos la existencia de la carpeta oculta `.git`.
+
+10- Borramos la carpeta
+
+```
+cd ..
+rm -rf first-repo
+```
+
+
