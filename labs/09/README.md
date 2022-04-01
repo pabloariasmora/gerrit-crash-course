@@ -1,4 +1,4 @@
-# Clona tu primer proyecto 
+# Clona un proyecto con buenas prácticas
 
 1- Utilizando la interfaz web y nuestro usuario Administrador OpenSSO.
 
@@ -11,7 +11,7 @@
 5- Utilizando el usuario `ubuntu`, pegar el comando `git clone` de la siguiente manera:
 
 ```
-ubuntu@ip-172-31-16-198:~$ git clone "http://54.175.5.53:8080/hello-world"
+ubuntu@ip-172-31-16-198:~$ git clone "ssh://54.175.5.53:8080/hello-world"
 Cloning into 'hello-world'...
 remote: Counting objects: 2, done
 remote: Finding sources: 100% (2/2)
