@@ -19,3 +19,10 @@
 
 9- Click sobre `SAVE GROUPS OPTIONS`
 
+10- Cambiamos los `Owners` del grupo por el valor de `Administrators`.
+
+11- Click `Change Owners`
+
+12- A modo de ejemplo sobre los `Members and included groups`, seleccionamos la opción de `Members`.
+
+13- Podemos observar que el creador del grupo forma automaticamente parte del mismo. Y en `Included Groups` la opción para generar nuestra jerarquía de grupos. Pero en este momento mantenemos las opciónes de esta manera.
