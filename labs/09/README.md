@@ -1,0 +1,53 @@
+# Habilitar HTTPS con Certificado 
+
+El acceso a la interfaz de usuario web de Gerrit a través de Internet también debe ser seguro, ya que no queremos que los datos, las cookies y las credenciales de los usuarios que se conectan a Gerrit sean espiados, capturados o modificados por nadie en tránsito.
+
+Si no hay requisitos para usar un servidor HTTP/S externo, la opción más fácil es reutilizar el interno proporcionado por Gerrit. 
+
+1- Para habilitar la seguridad SSL en HTTP, debemos detener a Gerrit y reiniciar el proceso de inicio:
+
+```
+service gerrit stop
+```
+
+2- Ejecutar nuevamente la configuración inicial de Gerrit, utilizando el usuario gerrit
+
+```
+cd /opt/gerrit
+export GERRIT_VERSION=3.1.3
+java -jar gerrit-$GERRIT_VERSION.war init
+```
+
+Entre los parámetros de HTTP 
+
+```
+*** HTTP Daemon
+*** 
+
+Behind reverse proxy           [y/N]? N
+Use SSL (https://)             [y/N]? Y
+Listen on address              [*]: 
+Listen on port                 [8080]: 8443
+Canonical URL                  [https://host.domain.com:8443/]: https://3.88.13.175:8443/ 
+Create new self-signed SSL certificate [Y/n]? Y
+Certificate server name        [host.domain.com:8443]: 
+Certificate expires in (days)  [365]:
+```
+
+
+3- Iniciamos el servicio de Gerrit como root
+
+```
+service gerrit start
+```
+
+4- Abrimos nuestro Canonical URL (Ej: `https://3.88.13.175:8443/ `) en nuestro navegador.
+
+Cuando abrimos Gerrit usando la URL HTTPS (https://host.domain.com:8443) recibiremos una advertencia del navegador sobre la identidad del Certificado X.509; Chrome muestra el siguiente mensaje de advertencia: `No se ha verificado la identidad de este sitio web: el certificado del servidor no es de confianza`. 
+Esto se espera para un certificado X.509 autofirmado.
+
+Esto puede dependiendo de la configuración del navegador ignorarse (para terminos educativos), dentro del mensaje de `Warning` desplegado del navegador presionamos el botón de `Advanced`. El cual nos muestra el mensaje del error en el certificado, y a este nivel podemos aceptar el riesgo (en esta ocasión) presionando el botón `Accept the Risk and Continue`.
+
+5- A este nivel deberiamos tener la posibilidad de ejecutar todas las acciones anteriores dentro de Gerrit, esta vez bajo `HTTPS`.
+
+
