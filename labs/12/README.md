@@ -36,7 +36,7 @@ git clone "http://54.175.5.53:8080/second-repo"
 
 ```
 ubuntu@1.2.3.4 ubuntu % git clone http://54.90.80.219:8080/second-repo
-Cloning into 'first-repo'...
+Cloning into 'second-repo'...
 remote: Counting objects: 2, done
 remote: Finding sources: 100% (2/2)
 remote: Total 2 (delta 0), reused 0 (delta 0)
@@ -89,3 +89,26 @@ Para poder modificar los permisos, debe ser administrador o propietario de ese p
 4- De `Reference: refs/*` elimine en la sección `Read`-> `Anonymous Users` usando `REMOVE` en el lado derecho.
 
 5- Presiona `SAVE` para guardar cambios 
+
+6- Sobre la opción `ANONYMOUS HTTP`. Copiamos el comando que esta bajo la opcíon `Clone`.
+
+Similar a
+
+```
+git clone "http://54.175.5.53:8080/second-repo"
+```
+
+7- Utilizando el usuario ubuntu, u otra máquina virtual con conexión a nuestra instancia de Gerrit. Ejecutamos el comando que copiamos anteriormente.
+
+```
+ubuntu@1.2.3.4 ubuntu % git clone https://34.230.70.247:8443/second-repo
+Username for 'https://34.230.70.247:8443': 
+Password for 'https://admin@34.230.70.247:8443': 
+Cloning into 'second-repo'...
+remote: Counting objects: 2, done
+remote: Finding sources: 100% (2/2)
+remote: Total 2 (delta 0), reused 0 (delta 0)
+Unpacking objects: 100% (2/2), 195 bytes | 97.00 KiB/s, done.
+```
+
+8- A pesar de que utilizamos el comando para clonar de manera anónima, se nos pide autenticar al usuario.
