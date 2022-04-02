@@ -65,8 +65,38 @@ El mismo problema puede ocurrir cuando usamos `Git/HTTPS` para clonar los reposi
 Similar a
 
 ```
-git clone "http://54.175.5.53:8080/first-repo"
+git clone "https://3.88.13.175:8443/first-repo"
 ```
+
+5- Utilizando el usuario ubuntu, u otra máquina virtual con conexión a nuestra instancia de Gerrit. Ejecutamos el comando que copiamos anteriormente.
+
+```
+ubuntu@ip-172-31-20-48:~$ git clone "https://3.88.13.175:8443/first-repo"
+Cloning into 'first-repo'...
+fatal: unable to access 'https://3.88.13.175:8443/first-repo/': server certificate verification failed. CAfile: none CRLfile: none
+```
+
+Como era esperado obtenemos un error por la verificación del certificado `Self-Sign`.
+
+6- Una solución temporal a esto es relajar la validación del certificado X.509 estableciendo http.sslVerify en falso en el archivo de configuración de Git. Para esto ejecutamos el siguiente commando:
+
+```
+git config --global http.sslVerify false
+```
+
+7- Nuevamente ejecutamos el comando de clonar el repositorio.
+
+```
+git clone "https://3.88.13.175:8443/first-repo"
+Cloning into 'first-repo'...
+remote: Counting objects: 2, done
+remote: Finding sources: 100% (2/2)
+Unpacking objects: 100% (2/2), 195 bytes | 195.00 KiB/s, done.
+remote: Total 2 (delta 0), reused 0 (delta 0)
+```
+
+**Nunca utilice esta solución alternativa para una instalación de producción. Eliminar la validación del certificado X.509 presenta el riesgo de ataques de "man-in-the-middle".**
+
 
 
 
