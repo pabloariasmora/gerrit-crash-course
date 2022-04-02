@@ -1,4 +1,4 @@
-# Habilitar HTTPS con Certificado 
+# Habilitar HTTPS con Certificado `Self-Signed`
 
 El acceso a la interfaz de usuario web de Gerrit a través de Internet también debe ser seguro, ya que no queremos que los datos, las cookies y las credenciales de los usuarios que se conectan a Gerrit sean espiados, capturados o modificados por nadie en tránsito.
 
@@ -49,5 +49,24 @@ Esto se espera para un certificado X.509 autofirmado.
 Esto puede dependiendo de la configuración del navegador ignorarse (para terminos educativos), dentro del mensaje de `Warning` desplegado del navegador presionamos el botón de `Advanced`. El cual nos muestra el mensaje del error en el certificado, y a este nivel podemos aceptar el riesgo (en esta ocasión) presionando el botón `Accept the Risk and Continue`.
 
 5- A este nivel deberiamos tener la posibilidad de ejecutar todas las acciones anteriores dentro de Gerrit, esta vez bajo `HTTPS`.
+
+# Clone usando HTTPS
+
+El mismo problema puede ocurrir cuando usamos `Git/HTTPS` para clonar los repositorios alojados en Gerrit.
+
+1- Utilizando la interfaz web y nuestro usuario Administrador OpenSSO.
+
+2- Damos click sobre `Browse`-> `Repositories`
+
+3- Volver a la página principal del repositorio `first-project`.
+
+4- Sobre la opción `ANONYMOUS HTTP`. Copiamos el comando que esta bajo la opcíon `Clone`.
+
+Similar a
+
+```
+git clone "http://54.175.5.53:8080/first-repo"
+```
+
 
 
