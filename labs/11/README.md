@@ -165,3 +165,23 @@
 42- Presionamos `CREATE`
 
 43- El projecto anterior es hijo de `TopSecret-Projects`
+
+Con esto de manera practica hemos creado
+
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                                           │
+│                                                                                                           │
+│                                               ┌───────►{OpenReview-Projects}────────────►Project-X        │
+│                                               │                                                           │
+│                                               │                                                           │
+│                                               │                                                           │
+│   {All-Projects}──────────────►{Internal-Projects}───────►{TopSecret-Projects}─────────────►Project-Y     │
+│        │                                                                                                  │
+│        │                                                                                                  │
+│        │                                                                                                  │
+│        └────────────────────►{OpenSource-Projects}─────►Gerrit                                            │
+│                                                 │                                                         │
+│                                                 │                                                         │
+│                                                 └─────►JGit                                               │
+│                                                                                                           │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────┘
