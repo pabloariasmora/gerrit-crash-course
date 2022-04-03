@@ -294,4 +294,10 @@ To http://3.89.66.201:8080/hello-world
  
  15- Podemos visualizar un listado de Changes relacionados bajo el mismo `Topic`
  
+ 16- Navegamos de vuelta a la ventana del `Change`.
+ 
+ 17- Podemos eliminar el `Topic` en caso de ser necesario. Presionando sobre la `X` contiguo al nombre del `Topic`.
+ 
+ 
+ 
  
