@@ -179,7 +179,7 @@ Added a new file called: demo.txt
 Applied Changes
 ```
 
-4- Confirmamos que el `Change-Id` no con este nuevo `commit`.
+4- Confirmamos que el `Change-Id` no con este nuevo `commit`. Gerrit asocia una nueva confirmación al mismo `change` utilizando el `Change-ID`. La forma más típica de enviar un nuevo `patch-set` es usando la opción `--amend` para volver a escribir un `commit` existente; de lo contrario, se generará un nuevo ID mediante `commit-hook`, que luego creará un nuevo `Change` en lugar de agregar un `patch-set` al existente
 
 ```
 git log
