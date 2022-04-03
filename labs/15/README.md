@@ -374,6 +374,8 @@ To ssh://34.230.70.247:29418/hello-world
 
 2- Nos aseguramos estar `logged` como el usuario autor del `Change`.
 
-3- Damos click sobre los `...` verticales en le esquina derecha de la pantalla. 
+3- Damos click sobre `Start Review`. 
 
-4- Seleccionamos la opción `Mark as workin in progress`.
+4- En la pantalal emergente, agregamos nuestros `Reviewers`. Click en `Start Review`
+
+
