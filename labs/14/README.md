@@ -306,46 +306,46 @@ To http://3.89.66.201:8080/hello-world
 ubuntu@ip-172-31-16-198:~/hello-world$ vi new-file.txt 
 ```
 
-4- Dentro del archivo adjuntamos la frase
+2- Dentro del archivo adjuntamos la frase
 
 ```
 Gerrit New File For Code Review + REVIEWER
 ```
 
-5- Guardamos el archivo.
+3- Guardamos el archivo.
 
-6- Sumamos el nuevo archivo a la lista de cambios.
+4- Sumamos el nuevo archivo a la lista de cambios.
 
 ```
 git add new-file.txt
 ```
 
-7- Confirmamos los cambios
+5- Confirmamos los cambios
 
 ```
 git commit
 ```
 
-8- Escribimos en el archivo de confirmación.
+6- Escribimos en el archivo de confirmación.
 
 ```
 Minor Change to new-file.txt to Add Reviewer
 ```
 
-9- Confirmamos que el `Change-Id` se relacionara con el  `commit`
+7- Confirmamos que el `Change-Id` se relacionara con el  `commit`
 
 ```
 git log
 ```
 
-12- Podemos crear un nuevo cambio y asignar un Topic llamado `First-Topic`, al aprovechar la parte derecha de la referencia Gerrit después del separador `%`, podemos agregar el parámetro del nombre del `Topic` para indicar el destino. Nuevamente realizar un `Push` para `Code Review` utilizando las referencias, pero con el nombre correcto del `Remote Branch` -> `dev`
+8- Podemos crear un nuevo cambio y asignar un Topic llamado `First-Topic`, al aprovechar la parte derecha de la referencia Gerrit después del separador `%`, podemos agregar el parámetro del nombre del `Topic` para indicar el destino. Nuevamente realizar un `Push` para `Code Review` utilizando las referencias, pero con el nombre correcto del `Remote Branch` -> `dev`
 
 
 ```
 git push origin HEAD:refs/for/dev%r=pabloariasmora@hotmail.com
 ```
 
-13- De la salida de success, copiamos el URL del cambio. (ej: `http://34.229.91.40:8080/c/hello-world/+/2`)
+9- De la salida de success, copiamos el URL del cambio. (ej: `http://34.229.91.40:8080/c/hello-world/+/2`)
 
 ```
 ubuntu@ip-172-31-16-198:~/hello-world$ git push origin HEAD:refs/for/dev%r=pabloariasmora@hotmail.com
@@ -365,10 +365,72 @@ To http://3.89.66.201:8080/hello-world
  
  ```
  
- 14- Visitamos el enlace, para visualizar nuestro cambio. Y dentro del navegador podemos buscar por la palabra `Reviewers`
+ 10- Visitamos el enlace, para visualizar nuestro cambio. Y dentro del navegador podemos buscar por la palabra `Reviewers`
  
- 15- Podemos visualizar la lista de `Reviewers`. De la misma manera remover o agregar.
+ 11- Podemos visualizar la lista de `Reviewers`. De la misma manera remover o agregar.
  
 
+## Agregando Reviewers No existentes
+
+1- Realizamos un cambio all archivo `new-file.txt`
+
+```
+ubuntu@ip-172-31-16-198:~/hello-world$ vi new-file.txt 
+```
+
+2- Dentro del archivo adjuntamos la frase
+
+```
+Gerrit New File For Code Review + REVIEWER NONE
+```
+
+3- Guardamos el archivo.
+
+4- Sumamos el nuevo archivo a la lista de cambios.
+
+```
+git add new-file.txt
+```
+
+5- Confirmamos los cambios
+
+```
+git commit
+```
+
+6- Escribimos en el archivo de confirmación.
+
+```
+Minor Change to new-file.txt to Add Missing Reviewer
+```
+
+7- Confirmamos que el `Change-Id` se relacionara con el  `commit`
+
+```
+git log
+```
+
+8- Podemos crear un nuevo cambio y asignar un Topic llamado `First-Topic`, al aprovechar la parte derecha de la referencia Gerrit después del separador `%`, podemos agregar el parámetro del nombre del `Topic` para indicar el destino. Nuevamente realizar un `Push` para `Code Review` utilizando las referencias, pero con el nombre correcto del `Remote Branch` -> `dev`
+
+
+```
+git push origin HEAD:refs/for/dev%r=me@pabloariasmora.com
+```
+
+9- En la salida visualizamos el mensaje de error, dado que el usuario no existe. Los `Reviewers` deben ser usuarios registrados de Gerrit, es decir, usuarios que hayan iniciado sesión y que ya hayan proporcionado su dirección de correo electrónico.
+
+```
+git push origin HEAD:refs/for/dev%r=pabloariasmora@amazon.com
+[...] 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 331 bytes | 331.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: Processing changes: refs: 1, done    
+To https://34.230.70.247:8443/hello-world
+ ! [remote rejected] HEAD -> refs/for/dev%r=pabloariasmora@amazon.com (Account 'pabloariasmora@amazon.com' not found
+pabloariasmora@amazon.com does not identify a registered user or group)
+error: failed to push some refs to 'https://34.230.70.247:8443/hello-world'
  
+ ```
  
