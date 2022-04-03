@@ -210,3 +210,7 @@ To ssh://34.230.70.247:29418/hello-world
 ```
 
 11- De la salida de success, copiamos el URL del cambio. (ej: `https://34.230.70.247:8443/c/hello-world/+/6`)
+
+12- Visitamos el enlace, para visualizar nuestro cambio. Buscando por la palabra `patch set`. Debemos confirmar que el mismo ha sido incrementado en `+1`.
+
+
