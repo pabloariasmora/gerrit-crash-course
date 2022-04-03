@@ -71,3 +71,39 @@ Turn off this advice by setting config variable advice.detachedHead to false
 HEAD is now at 954f332 Change A1
 [...]
 ```
+
+7- Realizamos el `Change B`:
+
+```
+echo "Change B" > change-b.txt
+git add change-b.txt
+git commit -m "Change B"
+[…]
+git push origin HEAD:refs/for/master
+```
+
+8- Finalmente, creamos el `Change C` encima del `Change B`, que es el `HEAD` actual:
+
+```
+echo "Change C" > change-c.txt
+git add change-c.txt
+git commit -m "Change C"
+[...]
+git push origin HEAD:refs/for/master
+[...]
+```
+
+## Navegando a través del gráfico de dependencias de cambios de Gerrit
+
+Los cuatro cambios ahora se han enviado a Gerrit y podemos ver cómo se han conectado en su gráfico de dependencia.
+
+1- Al abrir la GUI de Gerrit en `Changes` opción izquierda.
+(EJ: https://34.224.27.61:8443/q/status:open)
+
+2- Seleccionamos el `Change A1`.
+
+3-Podemos ver la sección de dependencias sobre `Relation chain`, que indica los vínculos con sus hijos dependientes.
+
+El `Change A1` está vinculado al `Change A2` y al `Change B` ^ `Change C` como nodos dependientes. Todas las entradas que se muestran en la lista de dependencias se pueden utilizar como hipervínculos para navegar por el gráfico muy fácilmente.
+
+4- Hacer clic en `Change B` para navegar hacia abajo a través del gráfico de dependencia. Enfasis en que a nivel de `Change B` desconoce `Change A2`
