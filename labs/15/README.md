@@ -213,4 +213,5 @@ To ssh://34.230.70.247:29418/hello-world
 
 12- Visitamos el enlace, para visualizar nuestro cambio. Buscando por la palabra `patch set`. Debemos confirmar que el mismo ha sido incrementado en `+1`.
 
+13- Ambos cambios son mapeados dentro del historial del nuevo `patch-set`
 
