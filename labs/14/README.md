@@ -46,7 +46,7 @@ git config user.email "pabloariasmora@hotmail.com"
 
 ```
 mkdir -p .git/hooks
-curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://54.175.5.53:8080/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
+curl --insecure -Lo `git rev-parse --git-dir`/hooks/commit-msg https://54.175.5.53:8443/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg
 ```
 
 ## Cambio a un branch de desarrollo
