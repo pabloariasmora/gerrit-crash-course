@@ -223,9 +223,11 @@ To http://3.89.66.201:8080/hello-world
 ## Implementando Topics
 
 La organización de `Changes` con `Topics` permite interactuar de forma selectiva con la audiencia de revisores más adecuada. 
-Un Topic es un conjunto de changes relacionados que están destinados a cumplir un objetivo global o son parte de una función global.
+Un `Topic` es un conjunto de changes relacionados que están destinados a cumplir un objetivo global o son parte de una función global.
 
 Podrian representar `User Story`-`Feature`-`Componentes`-`Target version number`-`Targer build architecture`
+
+Solo un `Topic` se puede asignar a un `Change`
 
 1- Realizamos un cambio all archivo `new-file.txt`
 
