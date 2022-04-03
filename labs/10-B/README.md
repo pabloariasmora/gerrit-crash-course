@@ -1,4 +1,13 @@
-# Clona un proyecto con buenas prácticas
+# Gerrit branch namespace para el code review 
+Ahora podemos experimentar con un ciclo de revisión de la vida real poniendo en práctica el flujo de trabajo ya descrito. 
+
+La única acción que no exploraremos en esta etapa es la integración de CI Build (de momento).
+
+La primera acción que desencadena una revisión de código es el commit inicial enviada a Gerrit.
+
+Gerrit presenta un nuevo namespace de referencia de Git completamente dedicado a la revisión de código con el prefijo refs/for antes del path de la branch (por ejemplo, para impulsar un cambio para su revisión en branch master, necesitamos usar refs/for/master).
+
+## Clona un proyecto con buenas prácticas
 
 1- Utilizando la interfaz web y nuestro usuario Administrador OpenSSO.
 
@@ -21,7 +30,7 @@ Unpacking objects: 100% (2/2), 195 bytes | 195.00 KiB/s, done.
 
 6- **Importante:** Aunque especificamos una contraseña para el usuario administrador, en este caso el repositorio de `hello-world` no solicitó ninguna autenticación de usuario/contraseña para la operación de clonación, ya que la lista de control de acceso predeterminada para el proyecto permitía lecturas anónimas. (Arreglaremos esto más tarde)
 
-# Configurando el Repositorio Local
+## Configurando el Repositorio Local
 
 Para que el repositorio local esté listo para ser utilizado por Gerrit, debemos realizar los siguientes pasos:
 
@@ -40,7 +49,7 @@ mkdir -p .git/hooks
 curl -Lo `git rev-parse --git-dir`/hooks/commit-msg http://54.175.5.53:8080/tools/hooks/commit-msg; chmod +x `git rev-parse --git-dir`/hooks/commit-msg)
 ```
 
-# Cambio a un branch de desarrollo
+## Cambio a un branch de desarrollo
 
 1- Verificamos nos encontremos en el `Branch`-> `master`
 
@@ -123,7 +132,7 @@ To http://54.175.5.53:8080/hello-world
 
 16- Podemos observar como hemos realizado un `Bypass` a la revisión de código.
 
-# Realizar un cambio a un branch de desarrollo con revisión de código.
+## Realizar un cambio a un branch de desarrollo con revisión de código.
 
 1- Realizamos un cambio all archivo `new-file.txt`
 
