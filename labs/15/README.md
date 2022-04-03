@@ -357,3 +357,23 @@ To ssh://34.230.70.247:29418/hello-world
 13- Ambos cambios son mapeados dentro del historial del nuevo `patch-set`. El `Change` reelaborado ahora se ha cargado y todos los `reviewers` han sido notificados para que vayan y lo revisen. Esta vez, con suerte, todo estará bien y el `contributor` podrá obtener la aprobación del `change` para ser enviado y posteriormente `merged`.
 
 14- Confirmamos que en la esquina derecha del `Change`, existe la marca de `Active`
+
+## Marcando un path-set como [WIP] desde la GUI
+
+1- De la salida de success anterior, copiamos el URL del cambio. (ej: `https://34.230.70.247:8443/c/hello-world/+/6`)
+
+2- Nos aseguramos estar `logged` como el usuario autor del `Change`.
+
+3- Damos click sobre los `...` verticales en le esquina derecha de la pantalla. 
+
+4- Seleccionamos la opción `Mark as workin in progress`.
+
+## Marcando path-set como [Active] desde la GUI
+
+1- De la salida de success anterior, copiamos el URL del cambio. (ej: `https://34.230.70.247:8443/c/hello-world/+/6`)
+
+2- Nos aseguramos estar `logged` como el usuario autor del `Change`.
+
+3- Damos click sobre los `...` verticales en le esquina derecha de la pantalla. 
+
+4- Seleccionamos la opción `Mark as workin in progress`.
