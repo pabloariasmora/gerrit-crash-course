@@ -365,13 +365,10 @@ To http://3.89.66.201:8080/hello-world
  
  ```
  
- 14- Visitamos el enlace, para visualizar nuestro cambio. Y dentro del navegador podemos buscar por la palabra `First-Topic`, y damos click sobre ella.
+ 14- Visitamos el enlace, para visualizar nuestro cambio. Y dentro del navegador podemos buscar por la palabra `Reviewers`
  
- 15- Podemos visualizar un listado de Changes relacionados bajo el mismo `Topic`
+ 15- Podemos visualizar la lista de `Reviewers`. De la misma manera remover o agregar.
  
- 16- Navegamos de vuelta a la ventana del `Change`.
- 
- 17- Podemos eliminar el `Topic` en caso de ser necesario. Presionando sobre la `X` contiguo al nombre del `Topic`.
- 
+
  
  
