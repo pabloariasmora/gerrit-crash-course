@@ -148,4 +148,65 @@ To ssh://34.230.70.247:29418/hello-world
 
 11- De la salida de success, copiamos el URL del cambio. (ej: `https://34.230.70.247:8443/c/hello-world/+/6`)
 
-13- Visitamos el enlace, para visualizar nuestro cambio.
+13- Visitamos el enlace, para visualizar nuestro cambio. Buscando por la palabra `patch set`.
+
+## Creando un nuevo path-set
+
+Para fines prácticos podemos suponer debemos realizar un cambio en nuestro archivo, ya que la revisión de código anterior recibio un comentario de realizar el cambio.
+
+1- Agregamos información en nuestro archivo `demo.txt`
+
+```
+echo "Change in File" >> demo.txt 
+```
+
+2- Agregamos el archivo a nuestro próximo `commit`
+
+```
+git add demo.txt
+```
+
+3- Realizamos un `commit` utilizando parte de nuestro mensaje anterior, esto para mantener un poco de limpieza dentro de nuestro historial.
+
+```
+git commit --amend
+```
+
+En ese mensaje de commit agregamos en una siguiente linea
+
+```
+Added a new file called: demo.txt
+Applied Changes
+```
+
+4- Confirmamos que el `Change-Id` cambia con este nuevo `commit`.
+
+```
+git log
+```
+
+5- Podemos realizar un `Push` para `Code Review` utilizando las referencias.
+
+```
+git push origin HEAD:refs/for/development
+```
+
+El commando anterior debio mostrar una salida similar a:
+
+```
+ubuntu@ip-172-31-20-48:~/hello-world$ git push origin HEAD:refs/for/development
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Writing objects: 100% (3/3), 322 bytes | 322.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: Processing changes: refs: 1, new: 1, done    
+remote: 
+remote: SUCCESS
+remote: 
+remote:   https://34.230.70.247:8443/c/hello-world/+/6 Added a new file called: demo.txt Final private published Change
+remote: 
+To ssh://34.230.70.247:29418/hello-world
+ * [new branch]      HEAD -> refs/for/development
+```
+
+11- De la salida de success, copiamos el URL del cambio. (ej: `https://34.230.70.247:8443/c/hello-world/+/6`)
