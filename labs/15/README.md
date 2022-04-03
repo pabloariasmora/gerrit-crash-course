@@ -213,5 +213,5 @@ To ssh://34.230.70.247:29418/hello-world
 
 12- Visitamos el enlace, para visualizar nuestro cambio. Buscando por la palabra `patch set`. Debemos confirmar que el mismo ha sido incrementado en `+1`.
 
-13- Ambos cambios son mapeados dentro del historial del nuevo `patch-set`
+13- Ambos cambios son mapeados dentro del historial del nuevo `patch-set`. El `Change` reelaborado ahora se ha cargado y todos los `reviewers` han sido notificados para que vayan y lo revisen. Esta vez, con suerte, todo estará bien y el `contributor` podrá obtener la aprobación del `change` para ser enviado y posteriormente `merged`.
 
