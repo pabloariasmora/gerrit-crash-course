@@ -278,7 +278,7 @@ remote: Processing changes: refs: 1, new: 1, done
 remote: 
 remote: SUCCESS
 remote: 
-remote:   https://34.230.70.247:8443/c/hello-world/+/6 Added a new file called: demo.txt Final private published Change WIP
+remote:   https://34.230.70.247:8443/c/hello-world/+/6 Added a new file called: demo.txt Final private published Change WIP [WIP]
 remote: 
 To ssh://34.230.70.247:29418/hello-world
  * [new branch]      HEAD -> refs/for/development
@@ -289,3 +289,71 @@ To ssh://34.230.70.247:29418/hello-world
 12- Visitamos el enlace, para visualizar nuestro cambio. Buscando por la palabra `patch set`. Debemos confirmar que el mismo ha sido incrementado en `+1`.
 
 13- Ambos cambios son mapeados dentro del historial del nuevo `patch-set`. El `Change` reelaborado ahora se ha cargado y todos los `reviewers` han sido notificados para que vayan y lo revisen. Esta vez, con suerte, todo estará bien y el `contributor` podrá obtener la aprobación del `change` para ser enviado y posteriormente `merged`.
+
+14- Confirmamos que en la esquina derecha del `Change`, existe la marca de `Work in Progress`
+
+## Creando un nuevo path-set marcado como [ACTIVE]
+1- Agregamos información en nuestro archivo `demo.txt`
+
+```
+echo "Change in File - ACTIVE" >> demo.txt 
+```
+
+2- Agregamos el archivo a nuestro próximo `commit`
+
+```
+git add demo.txt
+```
+
+3- Realizamos un `commit` utilizando parte de nuestro mensaje anterior, esto para mantener un poco de limpieza dentro de nuestro historial.
+
+```
+git commit --amend
+```
+
+En ese mensaje de commit agregamos en una siguiente linea
+
+```
+Added a new file called: demo.txt
+Applied Changes
+WIP
+ACTIVE
+```
+
+4- Confirmamos que el `Change-Id` no con este nuevo `commit`. Gerrit asocia una nueva confirmación al mismo `change` utilizando el `Change-ID`. La forma más típica de enviar un nuevo `patch-set` es usando la opción `--amend` para volver a escribir un `commit` existente; de lo contrario, se generará un nuevo ID mediante `commit-hook`, que luego creará un nuevo `Change` en lugar de agregar un `patch-set` al existente
+
+```
+git log
+```
+
+5- Podemos realizar un `Push` para `Code Review` utilizando las referencias.
+
+```
+git push origin HEAD:refs/for/development%ready
+```
+
+El commando anterior debio mostrar una salida similar a:
+
+```
+ubuntu@ip-172-31-20-48:~/hello-world$ git push origin HEAD:refs/for/development%ready
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Writing objects: 100% (3/3), 322 bytes | 322.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: Processing changes: refs: 1, new: 1, done    
+remote: 
+remote: SUCCESS
+remote: 
+remote:   https://34.230.70.247:8443/c/hello-world/+/6 Added a new file called: demo.txt Final private published Change WIP ACTIVE [NEW]
+remote: 
+To ssh://34.230.70.247:29418/hello-world
+ * [new branch]      HEAD -> refs/for/development
+```
+
+11- De la salida de success, copiamos el URL del cambio. (ej: `https://34.230.70.247:8443/c/hello-world/+/6`)
+
+12- Visitamos el enlace, para visualizar nuestro cambio. Buscando por la palabra `patch set`. Debemos confirmar que el mismo ha sido incrementado en `+1`.
+
+13- Ambos cambios son mapeados dentro del historial del nuevo `patch-set`. El `Change` reelaborado ahora se ha cargado y todos los `reviewers` han sido notificados para que vayan y lo revisen. Esta vez, con suerte, todo estará bien y el `contributor` podrá obtener la aprobación del `change` para ser enviado y posteriormente `merged`.
+
+14- Confirmamos que en la esquina derecha del `Change`, existe la marca de `Active`
