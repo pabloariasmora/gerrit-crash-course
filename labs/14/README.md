@@ -222,7 +222,7 @@ To http://3.89.66.201:8080/hello-world
 
 ## Implementando Topics
 
-La organización de CHanges con Topics permite interactuar de forma selectiva con la audiencia de revisores más adecuada. 
+La organización de `Changes` con `Topics` permite interactuar de forma selectiva con la audiencia de revisores más adecuada. 
 Un Topic es un conjunto de changes relacionados que están destinados a cumplir un objetivo global o son parte de una función global.
 
 1- Realizamos un cambio all archivo `new-file.txt`
@@ -286,7 +286,82 @@ remote:
 remote:   http://34.229.91.40:8080/c/hello-world/+/2 Minor Change to new-file.txt to Test Topics [NEW]
 remote: 
 To http://3.89.66.201:8080/hello-world
- * [new branch]      HEAD -> refs/for/dev%topic=First-Topic
+* [new branch]      HEAD -> refs/for/dev%topic=First-Topic
+ 
+```
+ 
+14- Visitamos el enlace, para visualizar nuestro cambio. Y dentro del navegador podemos buscar por la palabra `First-Topic`, y damos click sobre ella.
+ 
+15- Podemos visualizar un listado de Changes relacionados bajo el mismo `Topic`
+ 
+16- Navegamos de vuelta a la ventana del `Change`.
+ 
+17- Podemos eliminar el `Topic` en caso de ser necesario. Presionando sobre la `X` contiguo al nombre del `Topic`.
+ 
+## Agregando Reviewers
+
+1- Realizamos un cambio all archivo `new-file.txt`
+
+```
+ubuntu@ip-172-31-16-198:~/hello-world$ vi new-file.txt 
+```
+
+4- Dentro del archivo adjuntamos la frase
+
+```
+Gerrit New File For Code Review + REVIEWER
+```
+
+5- Guardamos el archivo.
+
+6- Sumamos el nuevo archivo a la lista de cambios.
+
+```
+git add new-file.txt
+```
+
+7- Confirmamos los cambios
+
+```
+git commit
+```
+
+8- Escribimos en el archivo de confirmación.
+
+```
+Minor Change to new-file.txt to Add Reviewer
+```
+
+9- Confirmamos que el `Change-Id` se relacionara con el  `commit`
+
+```
+git log
+```
+
+12- Podemos crear un nuevo cambio y asignar un Topic llamado `First-Topic`, al aprovechar la parte derecha de la referencia Gerrit después del separador `%`, podemos agregar el parámetro del nombre del `Topic` para indicar el destino. Nuevamente realizar un `Push` para `Code Review` utilizando las referencias, pero con el nombre correcto del `Remote Branch` -> `dev`
+
+
+```
+git push origin HEAD:refs/for/dev%r=pabloariasmora@hotmail.com
+```
+
+13- De la salida de success, copiamos el URL del cambio. (ej: `http://34.229.91.40:8080/c/hello-world/+/2`)
+
+```
+ubuntu@ip-172-31-16-198:~/hello-world$ git push origin HEAD:refs/for/dev%r=pabloariasmora@hotmail.com
+[...]
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 322 bytes | 322.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: Processing changes: refs: 1, new: 1, done    
+remote: 
+remote: SUCCESS
+remote: 
+remote:   http://34.229.91.40:8080/c/hello-world/+/3 Minor Change to new-file.txt to Add Reviewer [NEW]
+remote: 
+To http://3.89.66.201:8080/hello-world
+ * [new branch]      HEAD -> refs/for/dev%%r=pabloariasmora@hotmail.com
  
  ```
  
@@ -297,7 +372,6 @@ To http://3.89.66.201:8080/hello-world
  16- Navegamos de vuelta a la ventana del `Change`.
  
  17- Podemos eliminar el `Topic` en caso de ser necesario. Presionando sobre la `X` contiguo al nombre del `Topic`.
- 
  
  
  
