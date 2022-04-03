@@ -179,7 +179,7 @@ Added a new file called: demo.txt
 Applied Changes
 ```
 
-4- Confirmamos que el `Change-Id` cambia con este nuevo `commit`.
+4- Confirmamos que el `Change-Id` no con este nuevo `commit`.
 
 ```
 git log
