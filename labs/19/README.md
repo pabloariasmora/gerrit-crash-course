@@ -25,11 +25,10 @@ git pull origin master
 ls my_code.sh
 ```
 
-5- Creamos dos nuevos `branch` locales
+5- Creamos un nuevo `branch` local
 
 ```
 git checkout -b branch-c
-git checkout -b branch-d
 ```
 
 6- Dentro del `branch` `branch-c`, ejecutamos los siguientes commandos
@@ -53,17 +52,18 @@ Initial commit branch-c
 git log
 ```
 
-13- Creamos un `patch-set` con nuestro cambio
+9- Creamos un `patch-set` con nuestro cambio
 
 ```
 git push origin HEAD:refs/for/master
 ```
 
-10- Dentro del `branch` `branch-d`, ejecutamos los siguientes commandos
+10- Creamos un nuevo `branch` local
 
 ```
-git checkout branch-d
+git checkout -b branch-d
 ```
+
 Revisamos que nuestro archivo `another_code.sh` no exista
 
 ```
@@ -89,6 +89,7 @@ Initial commit branch-d
 ```
 git push origin HEAD:refs/for/master
 ```
+
 
 13- Revisamos la lista de `Changes` en la GUI de Gerrit
 (ej: https://34.224.27.61:8443/q/status:open). A este punto deberá ser posible visualizar ambos `Changes` hacia las dos diferentes `branches`
