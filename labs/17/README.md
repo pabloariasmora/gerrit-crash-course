@@ -51,8 +51,10 @@ git config --global user.email "pabloariasmora@hotmail.com"
 
 ```
 git checkout -b branch-a
+git push origin HEAD:branch-a
 git checkout master
 git checkout -b branch-b
+git push origin HEAD:branch-b
 ```
 
 10- Dentro del `branch` `branch-a`, ejecutamos los siguientes commandos
@@ -61,11 +63,63 @@ git checkout -b branch-b
 git checkout branch-a
 echo "echo Hello" > my_code.sh
 git add my_code.sh
-git commit -am 'initial commit branch-a'
+git commit 
 ```
 
+11- Agregamos el siguiente mensaje en nuestro commit
 
+```
+Initial commit branch-a
+```
 
+12- Creamos un `patch-set` con nuestro cambio
 
-git config --global user.name "Pablo Arias Mora"
-git config --global user.email "pabloariasmora@hotmail.com"
+```
+git push origin HEAD:refs/for/branch-a
+```
+
+10- Dentro del `branch` `branch-b`, ejecutamos los siguientes commandos
+
+```
+git checkout branch-b
+```
+Revisamos que nuestro archivo `my_code.sh` no exista
+
+```
+ls -la
+```
+
+Continuamos con los comandos
+
+```
+echo "mkdir -p test/dir/a" > my_code.sh
+git add my_code.sh
+git commit 
+```
+
+11- Agregamos el siguiente mensaje en nuestro commit
+
+```
+Initial commit branch-b
+```
+
+12- Creamos un `patch-set` con nuestro cambio
+
+```
+git push origin HEAD:refs/for/branch-b
+```
+
+13- Revisamos la lista de `Changes` en la GUI de Gerrit
+(ej: https://34.224.27.61:8443/q/status:open). A este punto deberá ser posible visualizar ambos `Changes` hacia las dos diferentes `branches`
+
+14- Seleccionamos el primer `Change` sobre el `branch-a`.
+
+15- Asumamos el cambio se valido y no hay comentarios, entonces marcamos la casilla de `Code-Review+2`.
+
+16- Revisamos que el estado del `Change` sea `Ready to submit`.
+
+17- Damos click sobre `Submit` para realizar nuestro `merge`.
+
+18- Confirmamos el `Submit`.
+
+19- El estado final del `Change` debe ser `Merged`.
