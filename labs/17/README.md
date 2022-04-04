@@ -300,7 +300,7 @@ To ssh://34.224.27.61:29418/hello-world
 
 37- Seleccionamos el primer `Change` sobre el `branch-b`.
 
-38- Debido a `rebase` el estado del `Change` es `Active` nuevamente
+38- Debido a `rebase` el estado del `Change` es `Active` nuevamente, pero como un segundo `patch-set`
 
 39- Asumamos el cambio se valido y no hay comentarios, entonces marcamos la casilla de `Code-Review+2`.
 
