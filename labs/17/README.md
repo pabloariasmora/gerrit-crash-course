@@ -243,3 +243,65 @@ mkdir -p test/dir/a
 >>>>>>> Initial commit branch-b
 ```
 
+Para nuestro ejemplo nuestro archivo solo debe contener la siguiente linea:
+
+```
+mkdir -p test/dir/a
+```
+
+33- Agregamos nuestro archivo dentro de la lista de archivos del `commit`
+
+```
+git add my_code.sh
+```
+
+34- Procedemos a continuar con nuestro `rebase`
+
+```
+git rebase --continue
+```
+
+En este punto hemos aplicado el `commit` del `change review`.
+El `Change-ID` de este cambio no ha sido modificado para que Gerrit pueda tener el historial de cambios.
+
+```
+git log
+```
+
+35- Vamos a generar un `patch-set` para iniciar nuevamente el proceso de `code-review`.
+
+```
+git push origin HEAD:refs/for/master
+```
+
+Salida similar a:
+
+```
+git push origin HEAD:refs/for/master
+[...]
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 319 bytes | 319.00 KiB/s, done.
+Total 3 (delta 0), reused 2 (delta 0)
+remote: Processing changes: refs: 1, updated: 1, done    
+remote: warning: c38ead2: no files changed, was rebased
+remote: 
+remote: SUCCESS
+remote: 
+remote:   https://34.224.27.61:8443/c/hello-world/+/29 Initial commit branch -b
+remote: 
+To ssh://34.224.27.61:29418/hello-world
+ * [new branch]      HEAD -> refs/for/master
+[...] 
+```
+
+36- Nuevamente revisamos la lista de `Changes` en la GUI de Gerrit
+(ej: https://34.224.27.61:8443/q/status:open). A este punto deberá ser posible visualizar solamente el `Change` - `branch-b`
+
+37- Seleccionamos el primer `Change` sobre el `branch-b`.
+
+38- Debido a `rebase` el estado del `Change` es `Active` nuevamente
+
+39- Asumamos el cambio se valido y no hay comentarios, entonces marcamos la casilla de `Code-Review+2`.
+
+
