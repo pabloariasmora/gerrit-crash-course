@@ -123,3 +123,18 @@ git push origin HEAD:refs/for/branch-b
 18- Confirmamos el `Submit`.
 
 19- El estado final del `Change` debe ser `Merged`.
+
+20- Nuevamente revisamos la lista de `Changes` en la GUI de Gerrit
+(ej: https://34.224.27.61:8443/q/status:open). A este punto deberá ser posible visualizar solamente el `Change` hacia la `branch-b`
+
+14- Seleccionamos el primer `Change` sobre el `branch-b`.
+
+15- Asumamos el cambio se valido y no hay comentarios, entonces marcamos la casilla de `Code-Review+2`.
+
+16- Revisamos que el estado del `Change` sea `Ready to submit`.
+
+17- Damos click sobre `Submit` para realizar nuestro `merge`.
+
+18- Confirmamos el `Submit`.
+
+19- El estado final del `Change` debe ser `Merged`.
