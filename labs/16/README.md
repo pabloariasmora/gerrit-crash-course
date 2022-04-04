@@ -34,7 +34,7 @@ git commit -a -m "Change A1"
 git push origin HEAD:refs/for/master%topic=topic-A 
 ```
 
-5- Ahora creamos el `CHange A2` sobre el `Change A1`, que es nuestro punto principal:
+5- Ahora creamos el `Change A2` sobre el `Change A1`, que es nuestro punto principal:
 
 ```
 echo "Change A2" >> change-a1.txt 
