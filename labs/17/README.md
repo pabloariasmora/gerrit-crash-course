@@ -51,10 +51,8 @@ git config --global user.email "pabloariasmora@hotmail.com"
 
 ```
 git checkout -b branch-a
-git push origin HEAD:branch-a
 git checkout master
 git checkout -b branch-b
-git push origin HEAD:branch-b
 ```
 
 10- Dentro del `branch` `branch-a`, ejecutamos los siguientes commandos
@@ -72,10 +70,16 @@ git commit
 Initial commit branch-a
 ```
 
-12- Creamos un `patch-set` con nuestro cambio
+12- Verificamos nuestro `Change-ID`
 
 ```
-git push origin HEAD:refs/for/branch-a
+git log
+```
+
+13- Creamos un `patch-set` con nuestro cambio
+
+```
+git push origin HEAD:refs/for/master
 ```
 
 10- Dentro del `branch` `branch-b`, ejecutamos los siguientes commandos
@@ -106,13 +110,13 @@ Initial commit branch-b
 12- Creamos un `patch-set` con nuestro cambio
 
 ```
-git push origin HEAD:refs/for/branch-b
+git push origin HEAD:refs/for/master
 ```
 
 13- Revisamos la lista de `Changes` en la GUI de Gerrit
 (ej: https://34.224.27.61:8443/q/status:open). A este punto deberá ser posible visualizar ambos `Changes` hacia las dos diferentes `branches`
 
-14- Seleccionamos el primer `Change` sobre el `branch-a`.
+14- Seleccionamos el primer `Change` - `branch-a`.
 
 15- Asumamos el cambio se valido y no hay comentarios, entonces marcamos la casilla de `Code-Review+2`.
 
@@ -125,15 +129,17 @@ git push origin HEAD:refs/for/branch-b
 19- El estado final del `Change` debe ser `Merged`.
 
 20- Nuevamente revisamos la lista de `Changes` en la GUI de Gerrit
-(ej: https://34.224.27.61:8443/q/status:open). A este punto deberá ser posible visualizar solamente el `Change` hacia la `branch-b`
+(ej: https://34.224.27.61:8443/q/status:open). A este punto deberá ser posible visualizar solamente el `Change` - `branch-b`
 
 14- Seleccionamos el primer `Change` sobre el `branch-b`.
 
+15- Debido a nuestro ultimo `submit` el estado del `Change` es `Merge Conflict` y no `Active`
+
 15- Asumamos el cambio se valido y no hay comentarios, entonces marcamos la casilla de `Code-Review+2`.
 
-16- Revisamos que el estado del `Change` sea `Ready to submit`.
+16- Revisamos que el estado del `Change` continue como `Merge Conflict`.
 
-17- Damos click sobre `Submit` para realizar nuestro `merge`.
+17- En esta ocasión el click sobre `Submit` esta disable hasta corregir el problema del `Merge Conflict`.
 
 18- Confirmamos el `Submit`.
 
