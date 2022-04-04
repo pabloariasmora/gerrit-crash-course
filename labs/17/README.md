@@ -1,13 +1,10 @@
 # Conflictos
 
-1- Por facilidad y congruencia en el laboratorio. Es mejor borrar nuestra copia local del repositorio.
+0- Por facilidad y congruencia en el laboratorio. Es mejor borrar nuestra copia local del repositorio.
 
 ```
 rm -rf hello-world
 ```
-
-
-## Clona un proyecto con buenas prácticas
 
 1- Utilizando la interfaz web y nuestro usuario Administrador OpenSSO.
 
