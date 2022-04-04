@@ -41,7 +41,13 @@ Created a revert of this change as If3d6081b688066f3172c466f35f8d7837f3bf48c
 
 10- Este nuevo `Change` deberá seguir los pasos completos de aprobación. En este momento no vamos a realizarlos para poder seguir con el laboratorio.
 
+## Abandonar un `Change`
 
+Algunas veces los `Changes` son inadecuados o obsoletos, y el equipo de trabajo decide ya sea iniciar nuevamente desde otra perspectiva, o incluso solamente son descartados.
+
+Estos `Changes` pueden ser cerrados al marcar el mismo como `Abandon`.
+
+1- Para esto darle click al bo
 
 
 
