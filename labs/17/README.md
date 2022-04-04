@@ -1,4 +1,4 @@
-# Conflictos
+# Conflictos - Rebase
 
 0- Por facilidad y congruencia en el laboratorio. Es mejor borrar nuestra copia local del repositorio.
 
