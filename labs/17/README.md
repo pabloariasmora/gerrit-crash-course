@@ -206,4 +206,40 @@ git diff --name-only --diff-filter=U
 git diff
 ```
 
+31- Editamos el archivo `my_code.sh`
+
+```
+vi my_code.sh
+```
+
+32- Realizamos las ediciones deseadas sobre el archivo. En este caso removeremos las siguientes lineas, asumiendo que ese es el cambio deseado.
+
+```
+<<<<<<< HEAD
+echo Hello
+=======
+>>>>>>> Initial commit branch-b
+```
+
+Resumen de significados
+
+La línea (o líneas) entre las líneas que comienzan `<<<<<<<` y `======` es lo que tenemos localmente.
+
+Ej:
+
+```
+<<<<<<< HEAD
+echo Hello
+=======
+```
+
+La línea (o líneas) entre las líneas que comienzan `=======` y `>>>>>>>` es lo que introdujo el otro (`pulled`) `commit` en este caso `>>>>>>> Initial commit branch-b`
+
+Ej:
+
+```
+=======
+mkdir -p test/dir/a
+>>>>>>> Initial commit branch-b
+```
 
