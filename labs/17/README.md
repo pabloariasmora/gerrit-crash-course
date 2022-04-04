@@ -131,16 +131,13 @@ git push origin HEAD:refs/for/master
 20- Nuevamente revisamos la lista de `Changes` en la GUI de Gerrit
 (ej: https://34.224.27.61:8443/q/status:open). A este punto deberá ser posible visualizar solamente el `Change` - `branch-b`
 
-14- Seleccionamos el primer `Change` sobre el `branch-b`.
+21- Seleccionamos el primer `Change` sobre el `branch-b`.
 
-15- Debido a nuestro ultimo `submit` el estado del `Change` es `Merge Conflict` y no `Active`
+22- Debido a nuestro ultimo `submit` el estado del `Change` es `Merge Conflict` y no `Active`
 
-15- Asumamos el cambio se valido y no hay comentarios, entonces marcamos la casilla de `Code-Review+2`.
+23- Asumamos el cambio se valido y no hay comentarios, entonces marcamos la casilla de `Code-Review+2`.
 
-16- Revisamos que el estado del `Change` continue como `Merge Conflict`.
+24- Revisamos que el estado del `Change` continue como `Merge Conflict`.
 
-17- En esta ocasión el click sobre `Submit` esta disable hasta corregir el problema del `Merge Conflict`.
+25- En esta ocasión el click sobre `Submit` esta disable hasta corregir el problema del `Merge Conflict`. Esto se debe a que el `branch` destino `master` a cambiado con respecto al origen que ha tomado este `branch`.
 
-18- Confirmamos el `Submit`.
-
-19- El estado final del `Change` debe ser `Merged`.
