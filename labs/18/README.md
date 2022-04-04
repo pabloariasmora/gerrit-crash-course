@@ -59,9 +59,13 @@ Estos `Changes` pueden ser cerrados al marcar el mismo como `Abandon`.
 
 Todo `Change` marcado como `Abandoned` puede ser restaurado luego si es requerido.
 
+## Restaurar un `Change`
 
+Los `Changes` marcados como `Abandoned` se mantienen con sus detalles, se pueden buscar y restaurar, si es necesario, 
 
+1- Para restaurar un `Changes Abandoned`, navegue hasta el `Change` y haga clic en el botón `Restore`.
 
+2- El estado del `Change` ahora debe ser `Active`, y su historial debe tener una entrada con nuestra decisión de restarurarlo.
 
 
 
