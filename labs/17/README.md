@@ -304,4 +304,8 @@ To ssh://34.224.27.61:29418/hello-world
 
 39- Asumamos el cambio se valido y no hay comentarios, entonces marcamos la casilla de `Code-Review+2`.
 
+40- Damos click sobre `Submit` para realizar nuestro `merge`.
 
+41- Confirmamos el `Submit`.
+
+42- El estado final del `Change` debe ser `Merged`.
