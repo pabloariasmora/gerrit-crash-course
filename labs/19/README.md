@@ -131,6 +131,8 @@ git pull
 
 21- Ejecutamos el comando de `cherry-pick` que tenemos copiado
 
+Este comando realizará una obtención de las referencias del `Change` y luego seleccionará el `commit` en el `master` `branch`.
+
 Salida similar a:
 
 ```
@@ -145,5 +147,57 @@ hint: after resolving the conflicts, mark the corrected paths
 hint: with 'git add <paths>' or 'git rm <paths>'
 hint: and commit the result with 'git commit'
 ```
+
+Como era de esperar, hay un conflicto que necesita ser resuelto. Es importante resolver el conflicto simplemente aceptando el codigo correcto del `commit` que deseamos dejar.
+
+22- En este caso vamos a mantener el codigo provisto de `Initial commit branch-d`
+
+23- Abrimos el archivo `my_code.sh`.
+
+```
+vi my_code.sh
+```
+
+Eliminamos todas lineas menos:
+
+```
+mkdir -p test/dir/a
+rm -rf ~
+```
+
+24- Agregamos el file a nuestra lista para `commit`
+
+```
+git add my_code.sh
+```
+
+25- Continuamos el `cherry-pick` para completar el `commit`
+
+```
+git cherry-pick --continue
+```
+
+El `Change-Id` en este punto no a recibido ningún cambio, y esto esperado.
+
+26- El `Change` ahora se ha aplicado localmente. Debemos realizar un `push` para nuevamente generar un `patch-set`.
+
+```
+git push origin HEAD:refs/for/master
+```
+
+27- Revisamos la lista de `Changes` en la GUI de Gerrit
+(ej: https://34.224.27.61:8443/q/status:open). A este punto deberá ser posible visualizar el `Change` - `Initial commit branch-d`.
+
+28- Asumamos el cambio se valido y no hay comentarios, entonces marcamos la casilla de `Code-Review+2`.
+
+29- Revisamos que el estado del `Change` cambie a `Ready to Submit`. Y que la marca que antes era `Submit including parents` ahora es `Submit`.
+
+30- Damos click sobre `Submit`
+
+31- Confirmamos el `Submit`
+
+32- Revisamos la lista de `Changes` en la GUI de Gerrit
+(ej: https://34.224.27.61:8443/q/status:open). A este punto deberá ser posible visualizar el `Change` - `Initial commit branch-c`.
+
 
 
