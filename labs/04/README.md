@@ -24,7 +24,7 @@ http://localhost:8080
 
 3- Ingresamos como `FULL NAME`: `John Doe`
 
-4- Ingresamos como `FULL NAME`: `John Doe`
+4- Ingresamos como `username`: `john_doe`
 
 5- Registramos como `email`: `john@doe.com`
 
