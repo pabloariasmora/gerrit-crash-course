@@ -76,7 +76,7 @@ Mantener los valores por defecto excepto el Authentication method.
 [...]
 *** User Authentication
 ***
-Authentication method [OPENSSO/?]: open_sso  RETURN
+Authentication method [OPENSSO/?]: openid_sso  RETURN
 [...]
 Initialized /opt/gerrit
 ```
