@@ -22,13 +22,19 @@ http://localhost:8080
 
 2- Click sobre `New Account`.
 
-3- Ingresamos como `FULL NAME`: `John Doe`
+3- En el pop-up `Cancel`
 
-4- Ingresamos como `username`: `john_doe`
+4- Seleccionar a la izquierda `NAME OF USER NOT SET`
 
-5- Registramos como `email`: `john@doe.com`
+5- Ingresamos como `FULL NAME`: `John Doe`
 
-6- Damos click sobre `Sign Out`.
+6- Ingresamos como `username`: `john_doe`
+
+7- Click on `SAVE CHANGES`
+
+4- Seleccionar a la izquierda `John Doe`
+
+7- Damos click sobre `Sign Out`.
 
 
 
