@@ -424,7 +424,7 @@ git push origin HEAD:refs/for/dev%r=me@pabloariasmora.com
 9- En la salida visualizamos el mensaje de error, dado que el usuario no existe. Los `Reviewers` deben ser usuarios registrados de Gerrit, es decir, usuarios que hayan iniciado sesión y que ya hayan proporcionado su dirección de correo electrónico.
 
 ```
-git push origin HEAD:refs/for/dev%r=pabloariasmora@amazon.com
+git push origin HEAD:refs/for/dev%r=pabloariasmora@me.com
 [...] 
 Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
@@ -432,8 +432,8 @@ Writing objects: 100% (3/3), 331 bytes | 331.00 KiB/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
 remote: Processing changes: refs: 1, done    
 To https://34.230.70.247:8443/hello-world
- ! [remote rejected] HEAD -> refs/for/dev%r=pabloariasmora@amazon.com (Account 'pabloariasmora@amazon.com' not found
-pabloariasmora@amazon.com does not identify a registered user or group)
+ ! [remote rejected] HEAD -> refs/for/dev%r=pabloariasmora@me.com (Account 'pabloariasmora@me.com' not found
+pabloariasmora@me.com does not identify a registered user or group)
 error: failed to push some refs to 'https://34.230.70.247:8443/hello-world'
  
  ```
