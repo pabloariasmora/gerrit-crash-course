@@ -346,13 +346,13 @@ git log
 
 
 ```
-git push origin HEAD:refs/for/dev%r=pabloariasmora@hotmail.com
+git push origin HEAD:refs/for/dev%r=admin@example.com
 ```
 
 9- De la salida de success, copiamos el URL del cambio. (ej: `http://34.229.91.40:8080/c/hello-world/+/2`)
 
 ```
-ubuntu@ip-172-31-16-198:~/hello-world$ git push origin HEAD:refs/for/dev%r=pabloariasmora@hotmail.com
+ubuntu@ip-172-31-16-198:~/hello-world$ git push origin HEAD:refs/for/dev%r=admin@example.com
 [...]
 Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
@@ -365,7 +365,7 @@ remote:
 remote:   http://34.229.91.40:8080/c/hello-world/+/3 Minor Change to new-file.txt to Add Reviewer [NEW]
 remote: 
 To http://3.89.66.201:8080/hello-world
- * [new branch]      HEAD -> refs/for/dev%%r=pabloariasmora@hotmail.com
+ * [new branch]      HEAD -> refs/for/dev%%r=admin@example.com
  
  ```
  
